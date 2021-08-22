@@ -1,0 +1,26 @@
+.faqs {
+
+    .faq {
+        background-color: $color-secondary;
+        margin-bottom: 2rem;
+
+        .card-header {
+            background-color: $color-tertiary;
+            border: none;
+
+            a {
+                font-weight: bold;
+                color: $color-primary;
+                font-size: 19px;
+            }
+
+        }
+
+        .collapse {
+            background-color: $color-secondary;
+            border: none;
+        }
+
+    }
+
+}
