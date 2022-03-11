@@ -27,26 +27,26 @@
                             <h5 class="text-center">{{ $name }}</h5>
 
                             <div class="buttons">
-                                <div class="btn-bans btn btn-outline-primary btn-block" data-toggle="collapse"
-                                     data-target="#bans"
+                                <div class="btn-bans btn btn-outline-primary btn-block" data-bs-toggle="collapse"
+                                     data-bs-target="#bans"
                                      aria-expanded="true"
                                      aria-controls="bans">{{ trans('litebans::messages.navigation.bans') }}
                                     ({{ $bans->count() }})
                                 </div>
-                                <div class="btn-mutes btn btn-outline-primary btn-block" data-toggle="collapse"
-                                     data-target="#mutes"
+                                <div class="btn-mutes btn btn-outline-primary btn-block" data-bs-toggle="collapse"
+                                     data-bs-target="#mutes"
                                      aria-expanded="true"
                                      aria-controls="mutes">{{ trans('litebans::messages.navigation.mutes') }}
                                     ({{ $mutes->count() }})
                                 </div>
-                                <div class="btn-kicks btn btn-outline-primary btn-block" data-toggle="collapse"
-                                     data-target="#kicks"
+                                <div class="btn-kicks btn btn-outline-primary btn-block" data-bs-toggle="collapse"
+                                     data-bs-target="#kicks"
                                      aria-expanded="true"
                                      aria-controls="kicks">{{ trans('litebans::messages.navigation.kicks') }}
                                     ({{ $kicks->count() }})
                                 </div>
-                                <div class="btn-mutes btn btn-outline-primary btn-block" data-toggle="collapse"
-                                     data-target="#warns"
+                                <div class="btn-mutes btn btn-outline-primary btn-block" data-bs-toggle="collapse"
+                                     data-bs-target="#warns"
                                      aria-expanded="true"
                                      aria-controls="warns">{{ trans('litebans::messages.navigation.warns') }}
                                     ({{ $warnings->count() }})
@@ -68,7 +68,7 @@
                                 {{ trans('litebans::messages.title') }}
                             </h3>
                         @endif
-                        <div class="bans collapse show" id="bans" data-parent=".parent">
+                        <div class="bans collapse show" id="bans" data-bs-parent=".parent">
                             <table class="table table-striped table-hover mt-4">
                                 <thead>
                                 <tr>
@@ -129,7 +129,7 @@
                             {{ $bans->withQueryString()->links() }}
                         </div>
 
-                        <div class="mutes collapse" id="mutes" data-parent=".parent">
+                        <div class="mutes collapse" id="mutes" data-bs-parent=".parent">
                             <table class="table table-striped table-hover mt-4">
                                 <thead>
                                 <tr>
@@ -189,7 +189,7 @@
                             {{ $mutes->withQueryString()->links() }}
                         </div>
 
-                        <div class="kicks collapse" id="kicks" data-parent=".parent">
+                        <div class="kicks collapse" id="kicks" data-bs-parent=".parent">
                             <table class="table table-striped table-hover mt-4">
                                 <thead>
                                 <tr>
@@ -237,7 +237,7 @@
                             {{ $kicks->withQueryString()->links() }}
                         </div>
 
-                        <div class="warns collapse" id="warns" data-parent=".parent">
+                        <div class="warns collapse" id="warns" data-bs-parent=".parent">
                             <table class="table table-striped table-hover mt-4">
                                 <thead>
                                 <tr>

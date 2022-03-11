@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', trans('shop::messages.offers.title-select'))
+@section('title', trans('shop::messages.offers.amount'))
 
 @push('footer-scripts')
     <script>
@@ -17,33 +17,27 @@
 @endpush
 
 @section('content')
-    <div class="container content">
-        <div class="page-container">
-            <div class="page-container-content offerts">
-                <h1 class="page-container-title">{{ trans('shop::messages.offers.title-select') }}</h1>
+    <h1 class="page-container-title">{{ trans('shop::messages.offers.amount') }}</h1>
 
-                <div class="row">
-                    @forelse($offers as $offer)
-                        <div class="col-md-3">
-                            <div class="card shadow-sm mb-3">
-                                <a href="{{ route('shop.offers.pay', [$offer->id, $gateway->type]) }}" class="payment-method">
-                                    <div class="card-body text-center">
-                                        <h3>{{ $offer->name }}</h3>
-                                        <h4>{{ $offer->price }} {{ currency_display() }}</h4>
-                                    </div>
-                                </a>
-                            </div>
+    <div class="row gy-3">
+        @forelse($offers as $offer)
+            <div class="col-md-3">
+                <div class="card">
+                    <a href="{{ route('shop.offers.pay', [$offer->id, $gateway->type]) }}" class="payment-method">
+                        <div class="card-body text-center">
+                            <h3>{{ $offer->name }}</h3>
+                            <h4>{{ $offer->price }} {{ currency_display() }}</h4>
                         </div>
-                    @empty
-                        <div class="col">
-                            <div class="alert alert-warning" role="alert">
-                                {{ trans('shop::messages.offers.empty') }}
-                            </div>
-                        </div>
-                    @endforelse
+                    </a>
                 </div>
             </div>
-        </div>
+        @empty
+            <div class="col">
+                <div class="alert alert-warning" role="alert">
+                    {{ trans('shop::messages.offers.empty') }}
+                </div>
+            </div>
+        @endforelse
     </div>
 
     <form method="POST" id="submitForm">

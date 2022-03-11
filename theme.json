@@ -4,6 +4,7 @@
     "description": "Theme for Azuriom By Captain34 taken over by Latshow",
     "version": "1.0.4",
     "url": "",
+    "azuriom_api": "1.0.0",
     "authors": [
         "Latshow"
     ],

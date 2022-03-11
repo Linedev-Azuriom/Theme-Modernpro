@@ -1,26 +1,14 @@
-.faqs {
-
-    .faq {
+#faq {
+    .accordion-item {
         background-color: $color-secondary;
         margin-bottom: 2rem;
 
-        .card-header {
+        .accordion-button {
             background-color: $color-tertiary;
             border: none;
-
-            a {
-                font-weight: bold;
-                color: $color-primary;
-                font-size: 19px;
-            }
-
+            font-weight: bold;
+            color: $color-primary;
+            font-size: 19px;
         }
-
-        .collapse {
-            background-color: $color-secondary;
-            border: none;
-        }
-
     }
-
 }

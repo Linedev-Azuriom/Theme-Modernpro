@@ -512,7 +512,7 @@
       float: none !important;
       background-color: $color-secondary;
     }
-    
+
     .item {
       position: relative;
       line-height: 34px;
@@ -622,22 +622,6 @@
       }
     }
 
-    .about, .socials, .links {
-      display: block;
-      float: left;
-      width: 30%;
-
-      @media screen and (max-width: 885px) {
-        width: 100%;
-        text-align: center;
-      }
-
-      .content {
-        position: relative;
-      }
-
-    }
-
     .about {
       p {
         color: $color-white;
@@ -650,13 +634,13 @@
       display: flex;
       justify-content: center;
       vertical-align: middle;
-      width: 35%;
-      margin-left: 5%;
+      //width: 35%;
+      //margin-left: 5%;
       margin-top: 25px;
       text-align: center;
 
       @media screen and (max-width: 885px) {
-        width: 100%;
+        //width: 100%;
         margin-top: 40px;
         margin-bottom: 40px;
         float: right;
@@ -667,7 +651,7 @@
         flex-flow: row wrap;
         justify-content: center;
         margin-bottom: 10px;
-        max-width: 230px;
+        //max-width: 230px;
 
         i {
           font-size: 35px;

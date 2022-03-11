@@ -40,7 +40,7 @@
                 </table>
 
                 <a href="{{ route('support.tickets.create') }}" class="btn btn-success">
-                    {{ trans('support::messages.actions.open-new') }}
+                    <i class="fas fa-plus"></i> {{ trans('support::messages.actions.create') }}
                 </a>
             </div>
         </div>

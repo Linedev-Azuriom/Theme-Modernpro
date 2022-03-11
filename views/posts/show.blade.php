@@ -11,119 +11,122 @@
 @endpush
 
 @section('content')
-    <div class="container content post">
-        <div class="page-container">
-            <div class="page-container-content news-show">
-                <h1 class="page-container-title" class="card-title">{{ $post->title }}</h1>
-                @if(!$post->isPublished())
-                    <div class="alert alert-info alert-dismissible fade show" role="alert">
-                        {{ trans('messages.posts.not-published') }}
-                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                @endif
+    @if(!$post->isPublished())
+        <div class="alert alert-info alert-dismissible fade show" role="alert">
+            {{ trans('messages.posts.unpublished') }}
+            <button type="button" class="btn-close" aria-label="Close"></button>
+        </div>
+    @endif
 
-                <div class="card shadow-sm mb-4">
-                    <div class="card-body">
-                        @if($post->hasImage())
-                            <img class="img-fluid rounded mx-auto mb-2" src="{{ $post->imageUrl() }}" alt="{{ $post->title }}">
-                        @endif
+    <h1 class="page-container-title">{{ $post->title }}</h1>
 
-                        <div class="card-text">
-                            {!! $post->content !!}
-                        </div>
+    @if($post->hasImage())
+        <img class="img-fluid rounded mb-3" src="{{ $post->imageUrl() }}" alt="{{ $post->title }}">
+    @endif
 
-                        <hr>
-
-                        <div class="d-flex justify-content-between align-items-center">
-                            <button type="button" class="btn btn-primary @if($post->isLiked()) active @endif" @guest disabled @endguest data-like-url="{{ route('posts.like', $post) }}">
-                                @lang('messages.likes', ['count' => '<span class="likes-count">'.$post->likes->count().'</span>'])
-                                <span class="d-none spinner-border spinner-border-sm load-spinner" role="status"></span>
-                            </button>
-
-                            <span>{{ trans('messages.posts.posted', ['date' => format_date($post->published_at), 'user' => $post->author->name]) }}</span>
-                        </div>
-                    </div>
-                </div>
-
-                @foreach($post->comments as $comment)
-                    <div class="card shadow-sm mb-3">
-                        <div class="card-header">
-                            @lang('messages.comments.author', ['user' => $comment->author->name, 'date' => format_date($comment->created_at, true)])
-                        </div>
-                        <div class="card-body media">
-                            <img class="d-flex mr-3 rounded" src="{{ $comment->author->getAvatar() }}" alt="{{ $comment->author->name }}" height="55">
-                            <div class="media-body">
-                                <div class="d-flex justify-content-between align-items-center">
-                                    <div class="content-body">
-                                        {{ $comment->parseContent() }}
-                                    </div>
-
-                                    @can('delete', $comment)
-                                        <a class="btn btn-danger" href="{{ route('posts.comments.destroy', [$post, $comment]) }}" data-confirm="delete">{{ trans('messages.actions.delete') }}</a>
-                                    @endif
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                @endforeach
-
-                @can('create', \Azuriom\Models\Comment::class)
-                    <div class="card mt-4 shadow-sm">
-                        <div class="card-header">
-                            <span class="h5">{{ trans('messages.comments.create') }}</span>
-                        </div>
-                        <div class="card-body">
-                            <form action="{{ route('posts.comments.store', $post) }}" method="POST">
-                                @csrf
-
-                                <div class="form-group">
-                                    <label for="content">{{ trans('messages.comments.your-comment') }}</label>
-                                    <textarea class="form-control @error('content') is-invalid @enderror" id="content" name="content" rows="4" required></textarea>
-
-                                    @error('content')
-                                    <span class="invalid-feedback" role="alert"><strong>{{ $message }}</strong></span>
-                                    @enderror
-                                </div>
-
-                                <button type="submit" class="btn btn-primary">{{ trans('messages.actions.comment') }}</button>
-                            </form>
-                        </div>
-                    </div>
-                @endcan
-
-                @guest
-                    <div class="alert alert-info" role="alert">
-                        {{ trans('messages.comments.guest') }}
-                    </div>
-                @endguest
+    <div class="card mb-4">
+        <div class="card-body">
+            <div class="card-text">
+                {!! $post->content !!}
             </div>
 
-            <!-- Delete confirm modal -->
-            <div class="modal fade" id="confirmDeleteModal" tabindex="-1" role="dialog" aria-labelledby="confirmDeleteLabel" aria-hidden="true">
-                <div class="modal-dialog" role="document">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h2 class="modal-title" id="confirmDeleteLabel">{{ trans('messages.comments.delete-title') }}</h2>
-                            <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true">×</span>
-                            </button>
-                        </div>
-                        <div class="modal-body">{{ trans('messages.comments.delete-description') }}</div>
-                        <div class="modal-footer">
-                            <button class="btn btn-secondary" type="button" data-dismiss="modal">{{ trans('messages.actions.cancel') }}</button>
+            <hr>
 
-                            <form id="confirmDeleteForm" method="POST">
-                                @method('DELETE')
-                                @csrf
+            <div class="d-md-flex justify-content-between align-items-center">
+                <button type="button" class="btn btn-primary @if($post->isLiked()) active @endif mb-3" @guest disabled @endguest data-like-url="{{ route('posts.like', $post) }}">
+                    @lang('messages.likes', ['count' => '<span class="likes-count">'.$post->likes->count().'</span>'])
+                    <span class="d-none spinner-border spinner-border-sm load-spinner" role="status"></span>
+                </button>
 
-                                <button class="btn btn-danger" type="submit">{{ trans('messages.actions.delete') }}</button>
-                            </form>
-                        </div>
-                    </div>
-                </div>
+                <p class="d-md-inline-block">
+                    {{ trans('messages.posts.posted', ['date' => format_date($post->published_at), 'user' => $post->author->name]) }}
+                </p>
             </div>
         </div>
     </div>
+
+    <section id="comments">
+        @foreach($post->comments as $comment)
+            <div class="card mb-3">
+                <div class="card-body d-flex">
+                    <div class="flex-shrink-0">
+                        <img class="me-3 rounded" src="{{ $comment->author->getAvatar() }}" alt="{{ $comment->author->name }}" height="55">
+                    </div>
+                    <div class="flex-grow-1">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div class="content-body">
+                                {{ $comment->parseContent() }}
+
+                                <p class="card-text text-muted">
+                                    @lang('messages.comments.author', ['user' => e($comment->author->name), 'date' => format_date($comment->created_at, true)])
+                                </p>
+                            </div>
+
+                            @can('delete', $comment)
+                                <a class="btn btn-danger" href="{{ route('posts.comments.destroy', [$post, $comment]) }}" data-confirm="delete">{{ trans('messages.actions.delete') }}</a>
+                            @endif
+                        </div>
+                    </div>
+                </div>
+            </div>
+        @endforeach
+    </section>
+
+    @can('create', \Azuriom\Models\Comment::class)
+        <div class="card mt-4">
+            <div class="card-body">
+                <h3 class="card-title">
+                    {{ trans('messages.comments.create') }}
+                </h3>
+
+                <form action="{{ route('posts.comments.store', $post) }}" method="POST">
+                    @csrf
+
+                    <div class="mb-3">
+                        <label class="form-label" for="content">{{ trans('messages.comments.content') }}</label>
+                        <textarea class="form-control @error('content') is-invalid @enderror" id="content" name="content" rows="4" required></textarea>
+
+                        @error('content')
+                        <span class="invalid-feedback" role="alert"><strong>{{ $message }}</strong></span>
+                        @enderror
+                    </div>
+
+                    <button type="submit" class="btn btn-primary">
+                        {{ trans('messages.actions.comment') }}
+                    </button>
+                </form>
+            </div>
+        </div>
+    @endcan
+
+    @guest
+        <div class="alert alert-info" role="alert">
+            {{ trans('messages.comments.guest') }}
+        </div>
+        @endguest
+        </div>
+
+        <!-- Delete confirm modal -->
+        <div class="modal fade" id="confirmDeleteModal" tabindex="-1" role="dialog" aria-labelledby="confirmDeleteLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h2 class="modal-title" id="confirmDeleteLabel">{{ trans('messages.comments.delete') }}</h2>
+                        <button class="close" type="button" data-dismiss="modal" aria-label="{{ trans('messages.actions.close') }}">
+                            <span aria-hidden="true">×</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">{{ trans('messages.comments.delete_confirm') }}</div>
+                    <div class="modal-footer">
+                        <button class="btn btn-secondary" type="button" data-dismiss="modal">{{ trans('messages.actions.cancel') }}</button>
+
+                        <form id="confirmDeleteForm" method="POST">
+                            @method('DELETE')
+                            @csrf
+
+                            <button class="btn btn-danger" type="submit">{{ trans('messages.actions.delete') }}</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
 @endsection

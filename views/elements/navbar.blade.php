@@ -8,7 +8,7 @@
                     </li>
                 @else
                     <li class="dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown{{ $element->id }}" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown{{ $element->id }}" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             {{ $element->name }}
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown{{ $element->id }}">
@@ -37,7 +37,7 @@
                 @endif
             @else
                 <li class="item">
-                    <a class="nav-link dropdown-toggle" href="#" id="notificationsDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <a class="nav-link dropdown-toggle" href="#" id="notificationsDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         <!-- Counter - Notifications -->
                         <i class="fas fa-bell fa-fw"></i>
                         @if(! $notifications->isEmpty())
@@ -78,7 +78,7 @@
                     </div>
                 </li>
                 <li class="item">
-                    <a id="userDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <a id="userDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         {{ Auth::user()->name }} <span class="caret"></span>
                     </a>
 
@@ -145,7 +145,7 @@
                 </li>
             @else
                 <li class="item nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown{{ $element->id }}" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown{{ $element->id }}" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         {{ $element->name }}
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown{{ $element->id }}">
@@ -172,7 +172,7 @@
             @endif
         @else
             <li class="item nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="notificationsDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <a class="nav-link dropdown-toggle" href="#" id="notificationsDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     <!-- Counter - Notifications -->
                     <i class="fas fa-bell fa-fw"></i>
                     @if(! $notifications->isEmpty())
@@ -212,7 +212,7 @@
             </li>
 
             <li class="item nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="notificationsDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <a class="nav-link dropdown-toggle" href="#" id="notificationsDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     {{ Auth::user()->name }} <span class="caret"></span>
                 </a>
                 <div class="dropdown-menu" aria-labelledby="notificationsDropdown">

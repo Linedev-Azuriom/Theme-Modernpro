@@ -2,7 +2,7 @@
 
 <nav class="navbar navbar-expand-lg navbar-light rounded ">
   <div class="container-fluid">
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
       aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -38,7 +38,7 @@
 <div class="alert alert-danger alert-search alert-dismissible fade show mt-3" role="alert">
   <i class="fas fa-exclamation-circle"></i>
   {{ session()->get('error-search') }}
-  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+  <button type="button" class="close" data-bs-dismiss="alert" aria-label="Close">
     <span aria-hidden="true">×</span>
   </button>
 </div>

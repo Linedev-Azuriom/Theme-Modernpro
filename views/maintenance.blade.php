@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', trans('messages.maintenance'))
+@section('title', trans('messages.maintenance.title'))
 
 @section('content')
     <div class="container content">
@@ -9,7 +9,7 @@
                 <div class="row justify-content-center">
                     <div class="col-md-8">
                         <div class="card">
-                            <h1 class="page-container-title">{{ trans('messages.maintenance') }}</h1>
+                            <h1 class="page-container-title">{{ trans('messages.maintenance.title') }}</h1>
 
                             <div class="card-body">
                                 {!! $maintenanceMessage !!}

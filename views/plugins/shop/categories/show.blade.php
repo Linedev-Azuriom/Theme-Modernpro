@@ -2,18 +2,17 @@
 
 @section('title', $category->name)
 
+
 @push('footer-scripts')
     <script>
         document.querySelectorAll('[data-package-url]').forEach(function (el) {
             el.addEventListener('click', function (ev) {
                 ev.preventDefault();
 
-                axios.get(el.dataset['packageUrl'], {
-                    headers: {
-                        'X-PJAX': 'true'
-                    }
-                }).then(function (response) {
-                    $('#itemModal').html(response.data).modal('show');
+                axios.get(el.dataset['packageUrl']).then(function (response) {
+                    const itemModal = document.getElementById('itemModal');
+                    itemModal.innerHTML = response.data;
+                    new bootstrap.Modal(itemModal).show();
                 }).catch(function (error) {
                     createAlert('danger', error, true);
                 });
@@ -30,7 +29,7 @@
 
                 <div class="row">
                     <div class="col-lg-3">
-                        @include('shop::categories.sidebar')
+                        @include('shop::categories._sidebar')
                     </div>
 
                     <div class="col-lg-9">
