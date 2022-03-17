@@ -26,6 +26,28 @@ header li {
   list-style: none;
 }
 
+h1 {
+  position: relative;
+  text-align: center;
+  font-size: 30px;
+  font-weight: bold;
+  color: #EFB702;
+  text-transform: uppercase;
+  margin-bottom: 80px;
+}
+h1:after {
+  position: absolute;
+  bottom: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: table;
+  width: 40px;
+  height: 5px;
+  border-radius: 2px;
+  background-color: #DDDDDD;
+  content: "";
+}
+
 a {
   text-decoration: none;
   cursor: pointer;
@@ -66,7 +88,8 @@ a:active {
   overflow: auto;
 }
 
-table {
+table,
+.table {
   width: 100%;
   min-width: auto;
   text-align: start;
@@ -74,33 +97,40 @@ table {
   margin: 0;
   border-spacing: 0;
   padding: 5px;
-  background-color: #EFB702;
+  background-color: #EFB702 !important;
   border-collapse: collapse;
   color: #DDDDDD;
   border-radius: 0;
   border: none;
   font-weight: bold;
 }
-table td, table th {
+table td, table th,
+.table td,
+.table th {
   border-top: none !important;
   color: #DDDDDD !important;
 }
-table thead {
+table thead,
+.table thead {
   color: #212227;
   text-transform: uppercase;
 }
-table thead th {
+table thead th,
+.table thead th {
   width: 20%;
   padding: 16px;
   text-align: start;
   border-bottom: none !important;
   font-weight: bold;
   color: #212227 !important;
+  background-color: #EFB702 !important;
 }
-table tbody {
+table tbody,
+.table tbody {
   background-color: #212227;
 }
-table tbody td {
+table tbody td,
+.table tbody td {
   padding: 10px;
 }
 
@@ -159,6 +189,7 @@ small {
 
 .list-group-item {
   background-color: rgba(33, 34, 39, 0.4);
+  color: white;
   transition: all 0.3s ease-in-out;
 }
 .list-group-item:hover {
@@ -202,6 +233,10 @@ small {
   background-color: #EFB702;
   color: #212227;
   border: none;
+}
+
+.text-primary {
+  color: #EFB702 !important;
 }
 
 @keyframes go-to-bottom-anim {
@@ -906,35 +941,6 @@ select:focus {
   font-size: 40px;
 }
 
-.page-container {
-  position: relative;
-  background-color: transparent;
-}
-.page-container-title {
-  position: relative;
-  text-align: center;
-  font-size: 30px;
-  font-weight: bold;
-  color: #EFB702;
-  text-transform: uppercase;
-  margin-bottom: 80px;
-}
-.page-container-title:after {
-  position: absolute;
-  bottom: -8px;
-  left: 50%;
-  transform: translateX(-50%);
-  display: table;
-  width: 40px;
-  height: 5px;
-  border-radius: 2px;
-  background-color: #DDDDDD;
-  content: "";
-}
-.page-container-content {
-  padding: 0px 40px 80px 40px;
-}
-
 .posts {
   display: flex;
   justify-content: center;
@@ -992,40 +998,16 @@ select:focus {
   color: #EFB702;
 }
 
-#faq .accordion-item {
+.accordion-item {
   background-color: #2E2E34;
   margin-bottom: 2rem;
 }
-#faq .accordion-item .accordion-button {
+.accordion-item .accordion-button {
   background-color: #EFB702;
   border: none;
   font-weight: bold;
   color: #212227;
   font-size: 19px;
-}
-
-.support-ticket-show .card {
-  border: none;
-  background-color: #2E2E34;
-  color: #DDDDDD;
-}
-.support-ticket-show .card .card-header {
-  color: #EFB702 !important;
-}
-
-.news-show .card {
-  background-color: transparent;
-  border: none;
-}
-.news-show .card .card-header {
-  background-color: #2E2E34;
-  border-radius: 0;
-}
-.news-show .shadow-sm {
-  box-shadow: none !important;
-}
-.news-show hr {
-  border-top: 1px solid #EFB702;
 }
 
 .shop-sidebar {
@@ -1123,27 +1105,27 @@ select:focus {
   background-color: #EFB702;
 }
 
-.products .card-body {
-  background-color: transparent;
-}
-.products .product {
+.shop .col-lg-9 .row div:last-child .card {
   border-radius: 5px;
   border: 3px solid #EFB702;
   text-align: center;
   background-color: transparent;
 }
-.products .product img {
+.shop .col-lg-9 .row div:last-child .card .card-body {
+  background-color: transparent;
+}
+.shop .col-lg-9 .row div:last-child .card img {
   width: 80%;
   height: auto;
   margin: 10%;
 }
-.products .product h4 {
+.shop .col-lg-9 .row div:last-child .card h4 {
   margin-bottom: 5px;
 }
-.products .product h5 {
+.shop .col-lg-9 .row div:last-child .card h5 {
   margin-bottom: 10px;
 }
-.products .product .buy {
+.shop .col-lg-9 .row div:last-child .card .btn {
   background-color: #212227;
   padding: 10px 25px;
   font-size: 16px;
@@ -1156,15 +1138,22 @@ select:focus {
   font-weight: bold;
   transition: all 0.3s ease-in-out;
 }
-.products .product .buy:hover {
+.shop .col-lg-9 .row div:last-child .card .btn:hover {
   background-color: #EFB702;
   color: #212227;
 }
 
-#litebans .navbar {
-  background-color: #EFB702;
-  border-color: #EFB702;
-  color: #212227;
+.support .btn {
+  margin-top: 2rem;
+}
+
+.forum .list-group-item i {
+  color: #EFB702 !important;
+}
+
+.wiki .card a,
+.wiki .card a i {
+  color: #EFB702 !important;
 }
 
 /*# sourceMappingURL=style.css.map */

@@ -25,7 +25,6 @@
     <link rel="shortcut icon" href="{{ favicon() }}">
 
     <!-- Scripts -->
-    <script src="{{ asset('vendor/jquery/jquery.min.js') }}" defer></script>
     <script src="{{ asset('vendor/bootstrap/js/bootstrap.bundle.min.js') }}" defer></script>
     <script src="{{ asset('vendor/axios/axios.min.js') }}" defer></script>
     <script src="{{ asset('js/script.js') }}" defer></script>
@@ -34,11 +33,10 @@
     <!-- Page level scripts -->
 @stack('scripts')
 
-<!-- Fonts -->
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Rubik&display=swap" rel="stylesheet">
-    <link href="{{ asset('vendor/fontawesome/css/all.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('vendor/bootstrap-icons/bootstrap-icons.css') }}" rel="stylesheet">
 
     <!-- Styles -->
     <link href="{{ asset('vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
@@ -61,24 +59,13 @@
         <div class="top-footer-content">
             <div class="container">
                 <div class="row">
-                    <div class="about col-md-3">
+                    <div class="about col-md-4">
                         <div class="content">
                             <h3 class="footer-title">{{ site_name() }}</h3>
                             <p>{{ theme_config("footer_description") }}</p>
                         </div>
                     </div>
-                    <div class="socials col-md-3">
-                        <div class="social-links">
-                            @foreach(['twitter', 'youtube', 'discord', 'steam', 'teamspeak', 'instagram'] as $social)
-                                @if($socialLink = theme_config("footer_social_{$social}"))
-                                    <a href="{{ $socialLink }}" target="_blank">
-                                        <i class="fab fa-{{ $social }}"></i>
-                                    </a>
-                                @endif
-                            @endforeach
-                        </div>
-                    </div>
-                    <div class="col-md-3 text-center">
+                    <div class="col-md-4 text-center">
                         @if(! $servers->isEmpty())
                             <h2 class="text-center">
                                 {{ trans('messages.servers') }}
@@ -111,7 +98,7 @@
                             @endforeach
                         @endif
                     </div>
-                    <div class="links col-md-3">
+                    <div class="links col-md-4">
                         <div class="content">
                             <h3 class="footer-title">{{ trans('theme::theme.footer_links_title') }}</h3>
                             @foreach(theme_config('footer_links') ?? [] as $link)
@@ -121,8 +108,7 @@
                     </div>
                     <div class="col-12 text-center">
                         @foreach(social_links() as $link)
-                            <a href="{{ $link->value }}" title="{{ $link->title }}" target="_blank"
-                               rel="noopener noreferrer" class="btn">
+                            <a href="{{ $link->value }}" title="{{ $link->title }}" target="_blank" rel="noopener noreferrer" class="btn">
                                 <i class="{{ $link->icon }} fa-2x" style="color: {{ $link->color }}"></i>
                             </a>
                         @endforeach
@@ -137,7 +123,7 @@
             {{ setting('copyright') }} | @lang('messages.copyright')
             <p style="margin-top: 10px;font-size: 10px;">
                 <a class="mention" href="https://discord.gg/wmYrG2c" target="_blank">
-                    Designed with <i style="color: orangered;" class="fas fa-heart"></i> by Captain34 taken over by
+                    Designed with <i style="color: orangered;" class="bi bi-heart-fill"></i> by Captain34 taken over by
                     Latshow
                 </a>
             </p>

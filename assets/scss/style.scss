@@ -39,6 +39,29 @@ header {
     }
 }
 
+h1 {
+    position: relative;
+    text-align: center;
+    font-size: 30px;
+    font-weight: bold;
+    color: $color-tertiary;
+    text-transform: uppercase;
+    margin-bottom: 80px;
+
+    &:after {
+        position: absolute;
+        bottom: -8px;
+        left: 50%;
+        transform: translateX(-50%);
+        display: table;
+        width: 40px;
+        height: 5px;
+        border-radius: 2px;
+        background-color: $color-white;
+        content: '';
+    }
+}
+
 a {
     text-decoration: none;
     cursor: pointer;
@@ -82,7 +105,8 @@ a {
     overflow: auto;
 }
 
-table {
+table,
+.table {
     width: 100%;
     min-width: auto;
     text-align: start;
@@ -90,7 +114,7 @@ table {
     margin: 0;
     border-spacing: 0;
     padding: 5px;
-    background-color: $color-tertiary;
+    background-color: $color-tertiary !important;
     border-collapse: collapse;
     color: $color-white;
     border-radius: 0;
@@ -113,6 +137,7 @@ table {
             border-bottom: none !important;
             font-weight: bold;
             color: $color-primary !important;
+            background-color: $color-tertiary !important;
         }
 
     }
@@ -127,10 +152,12 @@ table {
     }
 
 }
+
 div,
-small{
+small {
     color: white;
 }
+
 @media screen and (max-width: 1206px) {
     table {
         margin-left: 20px;
@@ -184,6 +211,7 @@ small{
 
 .list-group-item {
     background-color: $color-primary-transparent;
+    color: white;
     transition: all .3s ease-in-out;
 
     &:hover {
@@ -239,14 +267,15 @@ small{
         }
     }
 }
-
+.text-primary{
+    color: $color-tertiary !important;
+}
 @import "layout.scss";
 @import "input.scss";
 @import "modal.scss";
-@import "main.scss";
 @import "home.scss";
-@import "faq.scss";
-@import "support.scss";
-@import "news.scss";
+@import "accordion.scss";
 @import "shop.scss";
-@import "litebans";
+@import 'support.scss';
+@import 'forum.scss';
+@import 'wiki.scss';

@@ -1,20 +1,19 @@
 var nav_active = false;
-$("#mobile-btn").click(function (e) {
+document.getElementById("mobile-btn").addEventListener('click', function (e) {
     e.preventDefault();
 
-    if(nav_active){
+    if (nav_active) {
         nav_active = false;
-        $("#nav-btn-icon").html('<i class="fas fa-bars"></i>');
-        $("#mobile-nav").css("transform", "translateX(-100vw)");
+        document.getElementById('nav-btn-icon').innerHTML = '<i class="bi bi-list"></i>'
+        document.getElementById('mobile-nav').style.transform = 'translateX(-100vw)'
     } else {
         nav_active = true;
-        $("#nav-btn-icon").html('<i class="fas fa-times"></i>');
-        $("#mobile-nav").css("transform", "translateX(0px)");
+        document.getElementById('nav-btn-icon').innerHTML = '<i class="bi bi-x-lg"></i>'
+        document.getElementById('mobile-nav').style.transform = 'translateX(0px)'
     }
 });
 
-$("#go-to-bottom").click(function () {
-    $('html, body').animate({
-        scrollTop: $("#go-to-bottom-div").offset().top
-    });
+document.getElementById("go-to-bottom").addEventListener('click', function () {
+    window.scrollTo(0, document.querySelector("#go-to-bottom-div").scrollHeight + 350)
+
 });

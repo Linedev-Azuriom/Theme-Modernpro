@@ -39,7 +39,7 @@
                 <li class="item">
                     <a class="nav-link dropdown-toggle" href="#" id="notificationsDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         <!-- Counter - Notifications -->
-                        <i class="fas fa-bell fa-fw"></i>
+                        <i class="bi bi-bell-fill fa-fw"></i>
                         @if(! $notifications->isEmpty())
                             <span class="badge badge-danger" id="notificationsCounter">{{ $notifications->count() }}</span>
                         @endif
@@ -55,7 +55,7 @@
                                     <a href="#" class="dropdown-item media align-items-center">
                                         <div class="mr-3">
                                             <div class="rounded-circle text-white p-1 bg-{{ $notification->level }}">
-                                                <i class="fas fa-{{ $notification->icon() }} fa-fw m-2"></i>
+                                                <i class="bi bi-{{ $notification->icon() }} fa-fw m-2"></i>
                                             </div>
                                         </div>
                                         <div class="media-body">
@@ -73,7 +73,7 @@
                         @endif
 
                         <div id="noNotificationsLabel" class="dropdown-item text-center small text-success @if(! $notifications->isEmpty()) d-none @endif">
-                            <i class="fas fa-check"></i> {{ trans('messages.notifications.empty') }}
+                            <i class="bi bi-check-lg"></i> {{ trans('messages.notifications.empty') }}
                         </div>
                     </div>
                 </li>
@@ -124,7 +124,7 @@
 
         <div class="container" style="position: relative;">
             <div class="go-to-button" id="go-to-bottom">
-                <span><i class="fas fa-angle-double-down"></i></span>
+                <span><i class="bi bi-chevron-double-down"></i></span>
             </div>
         </div>
     </div>
@@ -132,7 +132,7 @@
 
 <div class="header-mobile-nav">
     <div class="mobile-btn" id="mobile-btn">
-        <span id="nav-btn-icon"><i class="fas fa-bars"></i></span>
+        <span id="nav-btn-icon"><i class="bi bi-list"></i></span>
     </div>
 
     <ul class="mobile-navigation" id="mobile-nav">
@@ -174,7 +174,7 @@
             <li class="item nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="notificationsDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     <!-- Counter - Notifications -->
-                    <i class="fas fa-bell fa-fw"></i>
+                    <i class="bi bi-bell-fill fa-fw"></i>
                     @if(! $notifications->isEmpty())
                         <span class="badge badge-danger" id="notificationsCounter">{{ $notifications->count() }}</span>
                     @endif
@@ -188,7 +188,7 @@
                                 <a href="#" class="dropdown-item media align-items-center">
                                     <div class="mr-3">
                                         <div class="rounded-circle text-white p-1 bg-{{ $notification->level }}">
-                                            <i class="fas fa-{{ $notification->icon() }} fa-fw m-2"></i>
+                                            <i class="bi bi-{{ $notification->icon() }} fa-fw m-2"></i>
                                         </div>
                                     </div>
                                     <div class="media-body">
@@ -206,7 +206,7 @@
                     @endif
 
                     <div id="noNotificationsLabel" class="dropdown-item text-center small text-success @if(! $notifications->isEmpty()) d-none @endif">
-                        <i class="fas fa-check"></i> {{ trans('messages.notifications.empty') }}
+                        <i class="bi bi-check-lg"></i> {{ trans('messages.notifications.empty') }}
                     </div>
                 </div>
             </li>

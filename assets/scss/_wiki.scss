@@ -1,0 +1,10 @@
+.wiki {
+    .card {
+        a {
+            &,
+            i {
+                color: $color-tertiary !important;
+            }
+        }
+    }
+}
