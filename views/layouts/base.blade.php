@@ -123,8 +123,7 @@
             {{ setting('copyright') }} | @lang('messages.copyright')
             <p style="margin-top: 10px;font-size: 10px;">
                 <a class="mention" href="https://discord.gg/wmYrG2c" target="_blank">
-                    Designed with <i style="color: orangered;" class="bi bi-heart-fill"></i> by Captain34 taken over by
-                    Latshow
+                    Designed with <i style="color: orangered;" class="bi bi-heart-fill"></i> by Latshow
                 </a>
             </p>
         </div>
