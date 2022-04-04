@@ -1,4 +1,14 @@
 {
-    "subtitle": null,
-    "footer_description": "Parturient montes nascetur ridiculus mus mauris vitae ultricies. A lacus vestibulum sed arcu non. Facilisi etiam dignissim diam quis."
+    "subtitle": "Subtitle",
+    "footer_description": "Parturient montes nascetur ridiculus mus mauris vitae ultricies. A lacus vestibulum sed arcu non. Facilisi etiam dignissim diam quis.",
+    "footer_links": [
+        {
+            "name": "Discord",
+            "value": "https://discord.com/invite/wmYrG2c"
+        },
+        {
+            "name": "Azuriom",
+            "value": "https://azuriom.com/"
+        }
+    ]
 }

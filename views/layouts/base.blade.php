@@ -40,7 +40,7 @@
 
     <!-- Styles -->
     <link href="{{ asset('vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
-    <link href="{{ theme_asset('css/style.css') }}?v=1.0.2" rel="stylesheet">
+    <link href="{{ theme_asset('css/style.css') }}?v=2.0.8" rel="stylesheet">
     @stack('styles')
 </head>
 
@@ -109,7 +109,7 @@
                     <div class="col-12 text-center">
                         @foreach(social_links() as $link)
                             <a href="{{ $link->value }}" title="{{ $link->title }}" target="_blank" rel="noopener noreferrer" class="btn">
-                                <i class="{{ $link->icon }} fa-2x" style="color: {{ $link->color }}"></i>
+                                <i class="{{ $link->icon }}  fs-1" style="color: {{ $link->color }}"></i>
                             </a>
                         @endforeach
                     </div>
