@@ -26,6 +26,7 @@
         </ul>
 
         <ul class="header-nav-right">
+            @include('elements.theme-selector')
             @guest
                 <li class="item">
                     <a href="{{ route('login') }}">

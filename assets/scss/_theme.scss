@@ -1,0 +1,21 @@
+
+[data-bs-theme=light] {
+
+    .header-nav {
+        .header-content {
+            &:after {
+                background-image: url(../img/header_shape_light.svg);
+            }
+        }
+
+    }
+
+    .footer {
+
+        .top-footer {
+            &:after {
+                background-image: url(../img/footer_shape_light.svg);
+            }
+        }
+    }
+}

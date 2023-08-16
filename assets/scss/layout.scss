@@ -18,7 +18,7 @@
     background-size: cover;
 
     &:after {
-        background-color: $color-primary;
+        background-color: var(--bs-primary-bg-subtle);
         position: absolute;
         z-index: 0;
         top: 0;
@@ -48,7 +48,7 @@
                 width: 110%;
                 left: -5%;
                 height: 5px;
-                background-color: $color-tertiary;
+                background-color: var(--bs-primary);
                 content: '';
             }
         }
@@ -56,7 +56,7 @@
         .nav-link {
             padding: 0;
 
-            color: $color-white;
+            color: var(--bs-primary-text-emphasis);
 
             &:focus {
                 color: darken($color-tertiary, 15%);
@@ -67,19 +67,19 @@
         .dropdown-menu {
             z-index: 999;
             line-height: initial;
-            background-color: $color-secondary;
+            background-color: var(--bs-primary-bg-subtle);
         }
 
         .dropdown {
             margin-left: 15px;
             font-size: 18px;
             transition: color .3s ease-in-out;
-            color: $color-white;
+            color: var(--bs-primary-text-emphasis);
             text-transform: uppercase;
 
             .active {
-                color: $color-tertiary !important;
-                border-left: 3px solid $color-tertiary;
+                color: var(--bs-primary) !important;
+                border-left: 3px solid var(--bs-primary);
 
                 &:after {
                     display: none !important;
@@ -87,16 +87,16 @@
             }
 
             a:hover, &:hover {
-                color: $color-tertiary;
+                color: var(--bs-primary);
             }
 
             .dropdown-item {
-                color: $color-white;
+                color: var(--bs-primary-text-emphasis);
                 background-color: transparent !important;
 
                 .active {
                     background-color: transparent !important;
-                    color: $color-tertiary !important;
+                    color: var(--bs-primary) !important;
 
                     &:after {
                         display: none !important;
@@ -106,7 +106,7 @@
             }
 
             .dropdown-toggle::after {
-                border-top: .3em solid $color-tertiary;
+                border-top: .3em solid var(--bs-primary);
             }
         }
 
@@ -117,7 +117,7 @@
             a {
                 font-size: 18px;
                 text-transform: uppercase;
-                color: $color-white;
+                color: var(--bs-primary-text-emphasis);
 
                 &:after {
                     position: absolute;
@@ -125,7 +125,7 @@
                     width: 110%;
                     left: -5%;
                     height: 0;
-                    background-color: $color-tertiary;
+                    background-color: var(--bs-primary);
                     content: '';
                     transition: all .3s ease-in-out;
                 }
@@ -156,7 +156,7 @@
         .dropdown-menu {
             z-index: 999;
             line-height: initial;
-            background-color: $color-secondary;
+            background-color: var(--bs-primary-bg-subtle);
         }
 
         .item {
@@ -164,19 +164,19 @@
             font-size: 18px;
             text-transform: uppercase;
             transition: color .3s ease-in-out;
-            color: $color-white;
+            color: var(--bs-primary-text-emphasis);
 
             a {
-                color: $color-white;
+                color: var(--bs-primary-text-emphasis);
             }
 
             a:hover, &:hover {
-                color: $color-tertiary;
+                color: var(--bs-primary);
                 background-color: transparent;
             }
 
             .dropdown-toggle::after {
-                border-top: .3em solid $color-tertiary;
+                border-top: .3em solid var(--bs-primary);
             }
 
         }
@@ -233,7 +233,7 @@
                 right: 0;
                 bottom: 0;
                 opacity: 1;
-                background-image: linear-gradient(0deg, #2E2E34 8%, transparent 100%);
+                background-image: linear-gradient(0deg, var(--bs-primary-bg-subtle) 8%, transparent 100%);
                 pointer-events: none;
                 z-index: 1;
             }
@@ -254,7 +254,7 @@
             }
 
             h1 {
-                color: $color-tertiary;
+                color: var(--bs-primary);
                 font-weight: bold;
                 font-size: 35px;
                 margin-bottom: 40px;
@@ -265,7 +265,7 @@
                 text-align: center;
                 max-width: 535px;
                 font-size: 23px;
-                color: $color-white;
+                color: var(--bs-primary-text-emphasis);
 
                 @media screen and (max-width: 848px) {
                     font-size: 17px;
@@ -284,18 +284,18 @@
             animation-iteration-count: infinite;
             padding: 0px 15px;
             border-radius: 16px;
-            border: 3px solid darken($color-tertiary, 20%);
+            border: 3px solid var(--bs-primary);
 
             @media screen and (max-width: 848px) {
                 right: 20px;
             }
 
             &:hover i {
-                color: $color-white;
+                color: var(--bs-primary-text-emphasis);
             }
 
             i {
-                color: $color-tertiary;
+                color: var(--bs-primary);
                 font-size: 30px;
                 display: flex;
                 justify-content: center;
@@ -318,7 +318,7 @@
     background-size: cover;
 
     &:after {
-        background-color: $color-primary;
+        background-color: var(--mod-primary-bg);
         position: absolute;
         z-index: 0;
         top: 0;
@@ -347,7 +347,7 @@
                 width: 110%;
                 left: -5%;
                 height: 5px;
-                background-color: $color-tertiary;
+                background-color: var(--bs-primary);
                 content: '';
             }
         }
@@ -359,19 +359,19 @@
         .dropdown-menu {
             z-index: 999;
             line-height: initial;
-            background-color: $color-secondary;
+            background-color: var(--bs-primary-bg-subtle);
         }
 
         .dropdown {
             margin-left: 15px;
             font-size: 18px;
             transition: color .3s ease-in-out;
-            color: $color-white;
+            color: var(--bs-primary-text-emphasis);
             text-transform: uppercase;
 
             .active {
-                color: $color-tertiary !important;
-                border-left: 3px solid $color-tertiary;
+                color: var(--bs-primary) !important;
+                border-left: 3px solid var(--bs-primary);
 
                 &:after {
                     display: none !important;
@@ -379,16 +379,16 @@
             }
 
             a:hover, &:hover {
-                color: $color-tertiary;
+                color: var(--bs-primary);
             }
 
             .dropdown-item {
-                color: $color-white;
+                color: var(--bs-primary-text-emphasis);
                 background-color: transparent !important;
 
                 .active {
                     background-color: transparent !important;
-                    color: $color-tertiary !important;
+                    color: var(--bs-primary) !important;
 
                     &:after {
                         display: none !important;
@@ -398,7 +398,7 @@
             }
 
             .dropdown-toggle::after {
-                border-top: .3em solid $color-tertiary;
+                border-top: .3em solid var(--bs-primary);
             }
         }
 
@@ -409,7 +409,7 @@
             a {
                 font-size: 18px;
                 text-transform: uppercase;
-                color: $color-white;
+                color: var(--bs-primary-text-emphasis);
 
                 &:after {
                     position: absolute;
@@ -417,7 +417,7 @@
                     width: 110%;
                     left: -5%;
                     height: 0;
-                    background-color: $color-tertiary;
+                    background-color: var(--bs-primary);
                     content: '';
                     transition: all .3s ease-in-out;
                 }
@@ -448,7 +448,7 @@
         .dropdown-menu {
             z-index: 999;
             line-height: initial;
-            background-color: $color-secondary;
+            background-color: var(--bs-primary-bg-subtle);
         }
 
         .item {
@@ -456,19 +456,19 @@
             font-size: 18px;
             text-transform: uppercase;
             transition: color .3s ease-in-out;
-            color: $color-white;
+            color: var(--bs-primary-text-emphasis);
 
             a {
-                color: $color-white;
+                color: var(--bs-primary-text-emphasis);
             }
 
             a:hover, &:hover {
-                color: $color-tertiary;
+                color: var(--bs-primary);
                 background-color: transparent;
             }
 
             .dropdown-toggle::after {
-                border-top: .3em solid $color-tertiary;
+                border-top: .3em solid var(--bs-primary);
             }
 
         }
@@ -524,7 +524,7 @@
 
         i {
             font-size: 30px;
-            color: $color-tertiary;
+            color: var(--bs-primary);
         }
 
     }
@@ -536,7 +536,7 @@
         left: 0;
         top: 0;
         bottom: 0;
-        background-color: $color-primary;
+        background-color: var(--mod-primary-bg);
         line-height: 20px;
         width: 100vw;
         height: 100vh;
@@ -557,7 +557,7 @@
             transform: none !important;
             min-width: 100%;
             float: none !important;
-            background-color: $color-secondary;
+            background-color: var(--bs-primary-bg-subtle);
         }
 
         .item {
@@ -572,16 +572,16 @@
                 font-weight: bold;
                 text-transform: uppercase;
                 transition: all .3s ease-in-out;
-                color: $color-white;
+                color: var(--bs-primary-text-emphasis);
             }
 
             a:hover, &:hover {
-                color: $color-tertiary;
+                color: var(--bs-primary);
                 background-color: transparent;
             }
 
             .dropdown-item {
-                color: $color-white;
+                color: var(--bs-primary-text-emphasis);
                 font-size: 18px;
             }
 
@@ -595,7 +595,7 @@
             left: -30px;
             height: 35px;
             width: 4px;
-            background-color: $color-tertiary;
+            background-color: var(--bs-primary);
         }
 
         .login {
@@ -607,13 +607,13 @@
         }
 
         .logout a {
-            background-color: $color-tertiary;
+            background-color: var(--bs-primary);
             padding: 8px 32px;
             transition: all .3s ease-in-out;
             text-align: center;
 
             &:hover {
-                background-color: $color-tertiary;
+                background-color: var(--bs-primary);
             }
         }
 
@@ -621,12 +621,15 @@
 
 }
 
+a {
+    text-decoration: none;
+}
 .footer {
     position: relative;
     margin-top: 480px;
 
     .top-footer {
-        background-color: $color-primary;
+        background-color: var(--mod-primary-bg);
         padding: 65px 10px;
 
         &:after {
@@ -664,14 +667,14 @@
                 width: 25px;
                 height: 3px;
                 border-radius: 2px;
-                background-color: $color-white;
+                background-color: var(--bs-primary-text-emphasis);
                 content: '';
             }
         }
 
         .about {
             p {
-                color: $color-white;
+                color: var(--bs-primary-text-emphasis);
                 text-align: justify;
             }
 
@@ -702,7 +705,7 @@
 
                 i {
                     font-size: 35px;
-                    color: $color-tertiary;
+                    color: var(--bs-primary);
                     transition: all .3s ease-in-out;
                 }
 
@@ -728,7 +731,7 @@
                 text-align: center;
                 display: block;
                 margin-bottom: 5px;
-                color: $color-tertiary;
+                color: var(--bs-primary);
                 transition: letter-spacing .3s ease-in-out;
 
                 &:hover {
@@ -740,11 +743,11 @@
     }
 
     .copyright {
-        background-color: $color-tertiary;
+        background-color: var(--bs-primary);
         padding-top: 20px;
         padding-bottom: 20px;
         text-align: center;
-        color: $color-primary;
+        color: var(--mod-primary-bg);
 
         p {
             font-size: 16px;
@@ -761,7 +764,7 @@
         }
 
         .mention {
-            color: $color-primary;
+            color: var(--mod-primary-bg);
             font-size: 10px;
         }
 

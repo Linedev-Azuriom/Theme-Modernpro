@@ -113,55 +113,42 @@
 
 }
 
-.shop {
-    .col-lg-9{
-        .row{
-            div:last-child{
-                .card {
-                    border-radius: 5px;
-                    border: 3px solid $color-tertiary;
-                    text-align: center;
-                    background-color: transparent;
+#shop {
+    .card {
+        border-radius: 5px;
+        border: 3px solid $color-tertiary;
+        text-align: center;
+        background-color: transparent;
 
-                    .card-body {
-                        background-color: transparent;
-                    }
-
-                    img {
-                        width: 80%;
-                        height: auto;
-                        margin: 10%;
-                    }
-
-                    h4 {
-                        margin-bottom: 5px;
-                    }
-
-                    h5 {
-                        margin-bottom: 10px;
-                    }
-
-                    .btn {
-                        background-color: $color-primary;
-                        padding: 10px 25px;
-                        font-size: 16px;
-                        text-transform: uppercase;
-                        color: $color-tertiary;
-                        border-radius: 0px;
-                        border: none;
-                        margin: 5px 0;
-                        text-align: center;
-                        font-weight: bold;
-                        transition: all .3s ease-in-out;
-
-                        &:hover {
-                            background-color: $color-tertiary;
-                            color: $color-primary;
-                        }
-                    }
-
-                }
-            }
+        .card-body {
+            background-color: transparent;
         }
+
+        img {
+            width: 80%;
+            height: auto;
+            margin: 10%;
+        }
+
+        h4 {
+            margin-bottom: 5px;
+        }
+
+        h5 {
+            margin-bottom: 10px;
+        }
+
+        .btn {
+            padding: 10px 25px;
+            font-size: 16px;
+            text-transform: uppercase;
+            border-radius: 0px;
+            border: none;
+            margin: 5px 0;
+            text-align: center;
+            font-weight: bold;
+            transition: all .3s ease-in-out;
+        }
+
     }
 }

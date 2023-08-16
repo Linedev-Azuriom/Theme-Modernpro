@@ -1,37 +1,23 @@
-$color-primary: #212227;
-$color-primary-transparent: rgba(33, 34, 39, 0.4);
-$color-secondary: #2E2E34;
-$color-tertiary: #EFB702;
-
-$color-white: #DDDDDD;
-$color-gray: #C6BFBF;
-$color-red: #FF3A4F;
-$color-green: #9BF3B9;
+@import "root";
 
 /* BASE CSS
  * --------------------------------------- */
 
 body {
     overflow-x: hidden !important;
-    background-color: $color-secondary;
-    color: $color-white;
-    font-size: 16px;
     -webkit-font-smoothing: antialiased;
     font-family: 'Rubik', sans-serif;
 }
 
 body ::selection {
-    background: $color-tertiary;
-    color: $color-primary;
+    background: var(--bs-primary);
+    color: var(--mod-primary-bg);
 }
 
 header {
     margin-bottom: 100px;
 }
 
-ul {
-    padding-inline-end: 40px;
-}
 
 header {
     li {
@@ -44,7 +30,7 @@ h1 {
     text-align: center;
     font-size: 30px;
     font-weight: bold;
-    color: $color-tertiary;
+    color: var(--bs-primary);
     text-transform: uppercase;
     margin-bottom: 80px;
 
@@ -57,26 +43,9 @@ h1 {
         width: 40px;
         height: 5px;
         border-radius: 2px;
-        background-color: $color-white;
+        background-color: var(--bs-primary-text-emphasis);
         content: '';
     }
-}
-
-a {
-    text-decoration: none;
-    cursor: pointer;
-    color: $color-white;
-
-    &:hover {
-        text-decoration: none;
-        color: $color-tertiary;
-    }
-
-    &:active {
-        background-color: transparent !important;
-
-    }
-
 }
 
 ::-webkit-scrollbar {
@@ -85,11 +54,11 @@ a {
 }
 
 ::-webkit-scrollbar-track {
-    background: $color-primary;
+    background: var(--mod-primary-bg);
 }
 
 ::-webkit-scrollbar-thumb {
-    background: $color-tertiary;
+    background: var(--bs-primary);
     height: 10px;
 }
 
@@ -110,21 +79,16 @@ table,
     width: 100%;
     min-width: auto;
     text-align: start;
-    border: none;
     margin: 0;
     border-spacing: 0;
     padding: 5px;
-    background-color: $color-tertiary !important;
+    background-color: var(--bs-primary);
     border-collapse: collapse;
     color: $color-white;
     border-radius: 0;
     border: none;
     font-weight: bold;
 
-    td, th {
-        border-top: none !important;
-        color: $color-white !important;
-    }
 
     thead {
         color: $color-primary;
@@ -272,10 +236,6 @@ small {
 }
 @import "layout.scss";
 @import "input.scss";
-@import "modal.scss";
 @import "home.scss";
-@import "accordion.scss";
-@import "shop.scss";
-@import 'support.scss';
-@import 'forum.scss';
-@import 'wiki.scss';
+@import "shop";
+@import "theme";

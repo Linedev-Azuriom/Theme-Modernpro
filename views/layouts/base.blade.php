@@ -40,11 +40,12 @@
 
     <!-- Styles -->
     <link href="{{ asset('vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/base.css') }}" rel="stylesheet">
     <link href="{{ theme_asset('css/style.css') }}?v=2.0.8" rel="stylesheet">
     @stack('styles')
 </head>
 
-<body>
+<body @if(dark_theme(true)) data-bs-theme="dark" @else data-bs-theme="light" @endif>
 <div id="app">
     <header>
         @include('elements.navbar')
@@ -71,7 +72,7 @@
                                 {{ trans('messages.servers') }}
                             </h2>
                             @foreach($servers as $server)
-                                <div class="card">
+                                <div class="card my-3">
                                     <div class="card-body text-center">
                                         <h5>{{ $server->name }}</h5>
                                         <p>
