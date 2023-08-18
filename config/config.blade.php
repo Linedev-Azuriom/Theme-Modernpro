@@ -107,6 +107,25 @@
                     </button>
                 </div>
 
+
+                <div class="form-check form-switch mt-4">
+                    <input type="checkbox" class="form-check-input" id="footerLienServeurlisteHidden"
+                           name="footer[liens][serveurliste][active]"
+                           @if(theme_config('footer.liens.serveurliste.active')) checked @endif>
+                    <label class="form-check-label" for="footerLienServeurlisteHidden">
+                        {{trans('theme::theme.footer.liens.serveurliste.active')}}
+                    </label>
+                </div>
+                <div class="form-group">
+                    <label for="footer_liens"
+                           class="form-label">{!! trans('theme::theme.footer.liens.serveurliste.link') !!}</label>
+                    <input type="text"
+                           class="form-control @error('footer[liens][serveurliste][link]') is-invalid @enderror"
+                           id="footer_liens"
+                           name="footer[liens][serveurliste][link]"
+                           value="{{ old('footer[liens][serveurliste][link]', theme_config('footer.liens.serveurliste.link')) }}">
+                </div>
+
                 <button type="submit" class="btn btn-primary mt-5">
                     <i class="bi bi-save"></i> {{ trans('messages.actions.save') }}
                 </button>

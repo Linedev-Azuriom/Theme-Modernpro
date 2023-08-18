@@ -26,7 +26,7 @@
         </ul>
 
         <ul class="header-nav-right">
-            @include('elements.theme-selector')
+            @include('elements.theme-selector', ['defaultDark' => true])
             @guest
                 <li class="item">
                     <a href="{{ route('login') }}">

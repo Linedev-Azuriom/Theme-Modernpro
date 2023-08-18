@@ -18,4 +18,12 @@ return [
         'teamspeak' => 'TeamSpeak',
         'instagram' => 'Instagram',
     ],
+    'footer' => [
+        'liens' => [
+            'serveurliste' => [
+                'active' => 'Do not display that your server is listed on serveurliste.com',
+                'link' => 'Link to your Serveurliste page. <a href="https://serveurliste.com/faq" target="_blank">Documentation</a>'
+            ]
+        ]
+    ]
 ];

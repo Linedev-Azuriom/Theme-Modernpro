@@ -41,7 +41,7 @@
     <!-- Styles -->
     <link href="{{ asset('vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
     <link href="{{ asset('css/base.css') }}" rel="stylesheet">
-    <link href="{{ theme_asset('css/style.css') }}?v=2.0.8" rel="stylesheet">
+    <link href="{{ theme_asset('css/style.css') }}?v=3.0.0" rel="stylesheet">
     @stack('styles')
 </head>
 
@@ -102,6 +102,12 @@
                     <div class="links col-md-4">
                         <div class="content">
                             <h3 class="footer-title">{{ trans('theme::theme.footer_links_title') }}</h3>
+                            @if(!theme_config('footer.liens.serveurliste.active'))
+                                <a href="@if(!theme_config('footer.liens.serveurliste.link')) https://www.serveurliste.com @else {{theme_config('footer.liens.serveurliste.link')}} @endif"
+                                   target="_blank">
+                                    Votez pour {{site_name()}} sur <span class="fw-bold">serveurliste.com</span>
+                                </a>
+                            @endif
                             @foreach(theme_config('footer_links') ?? [] as $link)
                                 <a href="{{ $link['value'] }}">{{ $link['name'] }}</a>
                             @endforeach

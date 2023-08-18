@@ -7,15 +7,11 @@ $color-white: #DDDDDD;
 $color-red: #FF3A4F;
 $color-green: #9BF3B9;
 
-:root {
-    .card-body {
-    }
-}
 
 :root,
 [data-bs-theme=light] {
     --mod-primary-text: #{$color-primary};
-    --mod-primary-bg: #c1c1c1;
+    --mod-primary-bg: #e7e7e7;
 
     --bs-primary-rgb: 239, 183, 2;
     --bs-link-color-rgb: #{$color-tertiary};
@@ -25,6 +21,7 @@ $color-green: #9BF3B9;
     --bs-body-bg: #f7f7f7;
     --bs-primary-bg-subtle: #f7f7f7;
 
+    --bs-heading-color:#{$color-primary};
 
     --bs-danger: #ff5956;
 
@@ -41,7 +38,8 @@ $color-green: #9BF3B9;
     }
 
     .nav-link {
-        --bs-nav-link-color: #{$color-primary}
+        --bs-nav-link-color: #{$color-primary};
+        --bs-nav-link-hover-color: #{$color-tertiary};
     }
 }
 
@@ -55,6 +53,8 @@ $color-green: #9BF3B9;
     --bs-primary-text-emphasis: #{$color-white};
     --bs-body-bg: #{$color-secondary};
     --bs-primary-bg-subtle: #{$color-secondary};
+
+    --bs-heading-color:#{$color-white};
 
     --bs-danger: #ff5956;
 
@@ -75,6 +75,7 @@ $color-green: #9BF3B9;
     }
 
     .nav-link {
-        --bs-nav-link-color: #{$color-white}
+        --bs-nav-link-color: #{$color-white};
+        --bs-nav-link-hover-color: #{$color-tertiary};
     }
 }

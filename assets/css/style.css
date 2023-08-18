@@ -1,13 +1,14 @@
 :root,
 [data-bs-theme=light] {
   --mod-primary-text: #212227;
-  --mod-primary-bg: #c1c1c1;
+  --mod-primary-bg: #e7e7e7;
   --bs-primary-rgb: 239, 183, 2;
   --bs-link-color-rgb: #EFB702;
   --bs-primary: #EFB702;
   --bs-primary-text-emphasis: #212227;
   --bs-body-bg: #f7f7f7;
   --bs-primary-bg-subtle: #f7f7f7;
+  --bs-heading-color:#212227;
   --bs-danger: #ff5956;
   --bs-border-color-translucent: #DDDDDD;
 }
@@ -23,7 +24,8 @@
 }
 :root .nav-link,
 [data-bs-theme=light] .nav-link {
-  --bs-nav-link-color: #212227 ;
+  --bs-nav-link-color: #212227;
+  --bs-nav-link-hover-color: #EFB702;
 }
 
 [data-bs-theme=dark] {
@@ -34,6 +36,7 @@
   --bs-primary-text-emphasis: #DDDDDD;
   --bs-body-bg: #2E2E34;
   --bs-primary-bg-subtle: #2E2E34;
+  --bs-heading-color:#DDDDDD;
   --bs-danger: #ff5956;
   --bs-border-color-translucent: #212227;
 }
@@ -49,7 +52,8 @@
   --bs-card-bg: #212227 ;
 }
 [data-bs-theme=dark] .nav-link {
-  --bs-nav-link-color: #DDDDDD ;
+  --bs-nav-link-color: #DDDDDD;
+  --bs-nav-link-hover-color: #EFB702;
 }
 
 /* BASE CSS
@@ -159,109 +163,8 @@ table tbody td,
   padding: 10px;
 }
 
-div,
-small {
-  color: white;
-}
-
-@media screen and (max-width: 1206px) {
-  table {
-    margin-left: 20px;
-    margin-right: 20px;
-    width: calc(100% - 40px);
-  }
-}
-.card {
-  background-color: transparent;
-  border: none;
-}
-.card .card-header {
-  background-color: #212227;
-  border-radius: 0;
-}
-
-.shadow-sm {
-  box-shadow: none !important;
-}
-
-.btn-link {
-  color: #EFB702;
-  transition: color 0.3s ease-in-out;
-}
-
 .breadcrumb {
   background-color: #212227;
-}
-
-.editor-toolbar {
-  border-top: 1px solid #EFB702 !important;
-  border-left: 1px solid #EFB702 !important;
-  border-right: 1px solid #EFB702 !important;
-}
-.editor-toolbar i {
-  color: #EFB702;
-}
-
-.CodeMirror {
-  background-color: #212227 !important;
-  color: #DDDDDD !important;
-  border: 1px solid #EFB702 !important;
-}
-
-.card-body {
-  background-color: rgba(33, 34, 39, 0.4);
-}
-
-.list-group-item {
-  background-color: rgba(33, 34, 39, 0.4);
-  color: white;
-  transition: all 0.3s ease-in-out;
-}
-.list-group-item:hover {
-  background-color: #c79802;
-  color: #212227;
-}
-
-.list-group-item i, .card-header i {
-  color: #EFB702;
-}
-
-.list-group-item.active {
-  background-color: #EFB702;
-  color: #212227;
-  border-color: rgba(33, 34, 39, 0.4);
-}
-
-.offerts .card-body {
-  background-color: #EFB702;
-  color: #212227;
-}
-.offerts .card-body h4 {
-  color: #DDDDDD;
-  font-weight: bold;
-  font-size: 28px;
-  padding: 10px 20px;
-  margin-top: 40px;
-  background-color: #2E2E34;
-}
-
-.vote .btn {
-  background-color: #212227;
-  font-weight: bold;
-  color: #EFB702;
-  transition: all 0.3s ease-in-out;
-  font-size: 20px;
-  padding: 10px 25px;
-  border: none;
-}
-.vote .btn:hover {
-  background-color: #EFB702;
-  color: #212227;
-  border: none;
-}
-
-.text-primary {
-  color: #EFB702 !important;
 }
 
 @keyframes go-to-bottom-anim {

@@ -10,5 +10,12 @@
             "name": "Azuriom",
             "value": "https://azuriom.com/"
         }
-    ]
+    ],
+    "footer": {
+        "liens": {
+            "serveurliste": {
+                "link": null
+            }
+        }
+    }
 }
